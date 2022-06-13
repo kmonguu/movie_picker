@@ -1,7 +1,7 @@
-import React from 'react'
+import Profile from './InputForm'
 
 function App() {
-  return <div>test</div>
+  return <Profile username={'kimNaYeon'} age={'23'} />
 }
 
 export default App

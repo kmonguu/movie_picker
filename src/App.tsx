@@ -1,7 +1,8 @@
+import InputForm from './InputForm'
 import Profile from './InputForm'
 
 function App() {
-  return <Profile username={'kimNaYeon'} age={'23'} />
+  return <InputForm />
 }
 
 export default App

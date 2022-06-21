@@ -3,6 +3,15 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import InputForm from './InputForm'
 import Poster from './Poster'
 
+const jsonLocalStorage = {
+  setItem: (key: string, value: any) => {
+    localStorage.setItem(key, JSON.stringify(value))
+  },
+  getItem: (key: string) => {
+    return JSON.parse(localStorage.getItem(key))
+  },
+}
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

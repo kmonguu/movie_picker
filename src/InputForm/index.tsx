@@ -11,7 +11,9 @@ function InputForm({ handleRandomNumber, value, onChange }: InputFormProps) {
   return (
     <div css={wrapperCss}>
       <input placeholder="영화제목을 맞춰보세요!" value={value} onChange={onChange} />
-      <button onClick={handleRandomNumber}>저장</button>
+      <button type="button" onClick={handleRandomNumber}>
+        저장
+      </button>
     </div>
   )
 }

@@ -7,4 +7,7 @@ export const jsonLocalStorage = {
     if (!item) return
     return JSON.parse(item)
   },
+  clear: () => {
+    localStorage.clear()
+  },
 }

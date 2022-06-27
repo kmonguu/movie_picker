@@ -2,13 +2,13 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React from 'react'
 import InputForm from '.'
 
-const Template: ComponentStory<typeof InputForm> = () => {
-  return <InputForm />
-}
+// const Template: ComponentStory<typeof InputForm> = () => {
+//   return <InputForm />
+// }
 
-export const Default = Template.bind({})
+// export const Default = Template.bind({})
 
-export default {
-  title: 'Component/InputForm',
-  component: InputForm,
-} as ComponentMeta<typeof InputForm>
+// export default {
+//   title: 'Component/InputForm',
+//   component: InputForm,
+// } as ComponentMeta<typeof InputForm>

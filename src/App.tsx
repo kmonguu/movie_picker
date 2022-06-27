@@ -1,16 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import InputForm from './InputForm'
+import { jsonLocalStorage } from './lib/storage'
 import Poster from './Poster'
-
-const jsonLocalStorage = {
-  setItem: (key: string, value: any) => {
-    localStorage.setItem(key, JSON.stringify(value))
-  },
-  getItem: (key: string) => {
-    return JSON.parse(localStorage.getItem(key))
-  },
-}
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,13 +22,18 @@ function App() {
 
   const handleRandomNumber = () => {
     setRandomNumber(Math.floor(Math.random() * 20))
+    jsonLocalStorage.setItem('movie-title', value)
     setValue('')
   }
+
+  useEffect(() => {
+    jsonLocalStorage.clear()
+  }, [])
 
   return (
     <QueryClientProvider client={queryClient}>
       <InputForm handleRandomNumber={handleRandomNumber} value={value} onChange={onChange} />
-      <Poster randomNumber={randomNumber} value={value} />
+      <Poster randomNumber={randomNumber} />
     </QueryClientProvider>
   )
 }

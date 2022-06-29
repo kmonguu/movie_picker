@@ -21,9 +21,14 @@ function App() {
   }
 
   const handleRandomNumber = () => {
-    setRandomNumber(Math.floor(Math.random() * 20))
     jsonLocalStorage.setItem('movie-title', value)
     setValue('')
+  }
+
+  const skipToNextPage = () => {
+    setRandomNumber(Math.floor(Math.random() * 20))
+    setValue('')
+    jsonLocalStorage.clear()
   }
 
   useEffect(() => {
@@ -32,7 +37,12 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <InputForm handleRandomNumber={handleRandomNumber} value={value} onChange={onChange} />
+      <InputForm
+        handleRandomNumber={handleRandomNumber}
+        skipToNextPage={skipToNextPage}
+        value={value}
+        onChange={onChange}
+      />
       <Poster randomNumber={randomNumber} />
     </QueryClientProvider>
   )

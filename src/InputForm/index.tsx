@@ -3,16 +3,20 @@ import { css } from '@emotion/react'
 
 interface InputFormProps {
   handleRandomNumber: () => void
+  skipToNextPage: () => void
   value: any
   onChange: any
 }
 
-function InputForm({ handleRandomNumber, value, onChange }: InputFormProps) {
+function InputForm({ handleRandomNumber, skipToNextPage, value, onChange }: InputFormProps) {
   return (
     <div css={wrapperCss}>
       <input placeholder="영화제목을 맞춰보세요!" value={value} onChange={onChange} />
       <button type="button" onClick={handleRandomNumber}>
         저장
+      </button>
+      <button type="button" onClick={skipToNextPage}>
+        다음
       </button>
     </div>
   )
@@ -31,6 +35,7 @@ const wrapperCss = css`
   > button {
     width: 50px;
     height: 30px;
+    margin-right: 10px;
 
     border: none;
     border-radius: 5px;

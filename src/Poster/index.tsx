@@ -41,8 +41,13 @@ function Poster({ randomNumber }: PosterProps) {
 
 const wrapperCss = css`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  > p {
+    font-size: 22px;
+  }
 `
 
 export default Poster

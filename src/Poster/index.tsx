@@ -47,6 +47,7 @@ const wrapperCss = css`
 
   > p {
     font-size: 22px;
+    font-weight: bold;
   }
 `
 
